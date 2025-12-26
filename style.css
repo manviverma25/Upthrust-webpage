@@ -125,10 +125,13 @@ body {
 }
 
 .logos-grid img {
+  display: block;
   width: 100%;
+  max-width: 900px;
   height: auto;
-  opacity: 0.9;
+  margin-top: 16px;
 }
+
 
 .visual-grid {
   display: grid;
