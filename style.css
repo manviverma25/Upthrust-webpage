@@ -232,3 +232,14 @@ details[open] .toggle {
     max-width: 100%;
   }
 }
+.logos-grid {
+  display: flex;
+  justify-content: center;
+}
+
+.logos-grid img {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+}
