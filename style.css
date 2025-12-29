@@ -16,7 +16,8 @@ body { background: var(--dark); color: white; font-family: 'Inter', sans-serif; 
 .navbar {
     display: flex; justify-content: space-between; align-items: center;
     padding: 30px 5%; position: fixed; width: 100%; top: 0; z-index: 1000;
-    background: transparent; transition: all 0.4s ease;
+    background: var(--grey-nav);; transition: all 0.4s ease;
+    
 }
 
 .navbar.scrolled {
