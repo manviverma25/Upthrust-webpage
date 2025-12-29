@@ -1,0 +1,151 @@
+:root {
+    --orange: #FF4D00;
+    --dark: #000;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--dark); color: white; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+.accent-font {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 600;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 30px 5%; position: fixed; width: 100%; top: 0; z-index: 1000;
+    background: transparent; transition: all 0.4s ease;
+}
+
+.navbar.scrolled {
+    padding: 15px 5%;
+    background: rgba(25, 25, 25, 0.75);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav-pill { background: #111; border: 1px solid #333; padding: 5px; border-radius: 50px; display: flex; }
+.nav-pill a { color: #888; text-decoration: none; padding: 10px 20px; border-radius: 50px; font-size: 14px; transition: 0.3s; }
+
+/* NAVBAR HOVER LOGIC - WHICH WE ARE NOW REPLICATING IN HERO */
+.nav-pill a:hover, .nav-pill a.active { 
+    background: var(--orange); 
+    color: white; 
+}
+
+.nav-cta { border: 2px solid var(--orange); border-radius: 50px; display: flex; overflow: hidden; }
+.nav-cta button { background: transparent; color: white; border: none; padding: 12px 20px; font-weight: 700; cursor: pointer; }
+.how-to-scale { background: var(--orange) !important; }
+
+/* HERO */
+.hero { display: flex; padding: 160px 5% 50px; min-height: 100vh; gap: 40px; align-items: center; }
+.hero-left { flex: 1.2; }
+.avatar-group { display: flex; margin-bottom: 20px; }
+.avatar { width: 40px; height: 40px; border-radius: 50%; border: 2px solid #000; margin-right: -10px; }
+
+h1 { font-size: 68px; font-weight: 800; line-height: 1.1; margin: 25px 0; letter-spacing: -2px; }
+.badge { color: var(--orange); border: 1px solid #333; padding: 6px 15px; border-radius: 20px; font-size: 14px; width: fit-content; }
+.hero-desc { color: #888; font-size: 18px; margin-bottom: 35px; max-width: 500px; line-height: 1.5; }
+
+/* SCALE OPTION BUTTON (EXACT NAVBAR HOVER BEHAVIOR) */
+.scale-btn {
+    background: #111; border: 1px solid #333; border-radius: 12px; padding: 15px 25px;
+    display: flex; align-items: center; gap: 15px; cursor: pointer; 
+    transition: all 0.3s ease; /* Matched to nav speed */
+}
+
+/* On hover, background turns orange just like nav pill options */
+.scale-btn:hover { 
+    background: var(--orange) !important; 
+    border-color: var(--orange); 
+}
+
+/* Fix for child elements when button is hovered */
+.rocket-box { background: var(--orange); padding: 10px; border-radius: 10px; font-size: 20px; transition: 0.3s; }
+.scale-btn:hover .rocket-box { 
+    background: white !important; /* Turns white for contrast when bg is orange */
+    color: var(--orange); 
+}
+
+.btn-text { text-align: left; color: white; transition: 0.3s; }
+.btn-text strong { display: block; font-size: 18px; }
+.btn-text small { font-size: 10px; opacity: 0.6; }
+
+/* SLIDER MASONRY */
+.hero-right { 
+    flex: 1; display: flex; gap: 15px; height: 750px; overflow: hidden; 
+    mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+}
+.column { flex: 1; }
+.track { display: flex; flex-direction: column; gap: 15px; }
+.card-img { width: 100%; height: auto; border-radius: 15px; display: block; }
+
+@keyframes scrollUp { from { transform: translateY(0); } to { transform: translateY(-50.5%); } }
+@keyframes scrollDown { from { transform: translateY(-50.5%); } to { transform: translateY(0); } }
+.col-up .track { animation: scrollUp 25s linear infinite; }
+.col-down .track { animation: scrollDown 25s linear infinite; }
+
+/* SERVICES */
+.services-section { background: #F8F9FA; color: #000; padding: 100px 10%; border-radius: 60px 60px 0 0; }
+.services-title { text-align: center; font-size: 48px; margin-bottom: 60px; font-weight: 800; }
+.service-card { background: white; border-radius: 30px; padding: 40px; margin-bottom: 25px; border: 1px solid #eee; transition: 0.5s; cursor: pointer; }
+.service-body { max-height: 0; overflow: hidden; opacity: 0; transition: 0.5s ease; }
+.service-card:hover .service-body { max-height: 250px; opacity: 1; margin-top: 25px; }
+.service-card:hover { border-color: var(--orange); }
+            <div class="service-header">
+                <div class="service-main-info">
+                    <h3>Creative Production</h3>
+                    <p class="sub-text">UGC Video • Static Design • Performance Editing</p>
+                </div>
+                <div class="plus-icon">+</div>
+            </div>
+            <div class="service-body">
+                <p>Tested on $50M+ spend to find your winning ad hooks and scroll-stoppers.</p>
+                <button class="service-cta">Show Us 🚀 How To Scale</button>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-header">
+                <div class="service-main-info">
+                    <h3>Website Design</h3>
+                    <p class="sub-text">Shopify Stores • CRO & Landing Pages</p>
+                </div>
+                <div class="plus-icon">+</div>
+            </div>
+            <div class="service-body">
+                <p>Conversion-focused Shopify stores built for maximum speed and checkout efficiency.</p>
+                <button class="service-cta">Show Us 🚀 How To Scale</button>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <div class="service-header">
+                <div class="service-main-info">
+                    <h3>Marketplace Management</h3>
+                    <p class="sub-text">Amazon PPC • Flipkart Ads • SEO</p>
+                </div>
+                <div class="plus-icon">+</div>
+            </div>
+            <div class="service-body">
+                <p>Dominate rankings on Amazon and Flipkart while maintaining a lower ACoS.</p>
+                <button class="service-cta">Show Us 🚀 How To Scale</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        window.onscroll = function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        };
+    </script>
+</body>
+</html>
