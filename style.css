@@ -113,4 +113,22 @@ h1 { font-size: 68px; font-weight: 800; line-height: 1.1; margin: 25px 0; letter
 .service-body { max-height: 0; overflow: hidden; opacity: 0; transition: 0.5s ease; }
 .service-card:hover .service-body { max-height: 250px; opacity: 1; margin-top: 25px; }
 .service-card:hover { border-color: var(--orange); }
-           
+
+/* Base styles for the pill-shaped button */
+.service-cta {
+    background-color: #000000; /* Black background */
+    color: #ffffff;            /* White text */
+    border: none;
+    padding: 10px 24px;        /* Vertical and Horizontal padding */
+    border-radius: 50px;       /* Creates the pill shape */
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease; /* Smooth color transition */
+    display: inline-block;
+}
+
+/* Hover state */
+.service-cta:hover {
+    background-color: #ffa500; /* Turns Orange on hover */
+    color: #ffffff;            /* Ensures text stays white */
+}
