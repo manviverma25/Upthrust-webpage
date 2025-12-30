@@ -26,7 +26,6 @@ body { background: var(--dark); color: white; font-family: 'Inter', sans-serif; 
     transition: all 0.4s ease;
 }
 
-
 .navbar.scrolled {
     padding: 15px 5%;
     background: rgba(25, 25, 25, 0.75);
@@ -37,98 +36,82 @@ body { background: var(--dark); color: white; font-family: 'Inter', sans-serif; 
 
 .nav-pill { background: #111; border: 1px solid #333; padding: 5px; border-radius: 50px; display: flex; }
 .nav-pill a { color: #888; text-decoration: none; padding: 10px 20px; border-radius: 50px; font-size: 14px; transition: 0.3s; }
-
-/* NAVBAR HOVER LOGIC - WHICH WE ARE NOW REPLICATING IN HERO */
-.nav-pill a:hover, .nav-pill a.active { 
-    background: var(--orange); 
-    color: white; 
-}
+.nav-pill a:hover, .nav-pill a.active { background: var(--orange); color: white; }
 
 .nav-cta { border: 2px solid var(--orange); border-radius: 50px; display: flex; overflow: hidden; }
 .nav-cta button { background: transparent; color: white; border: none; padding: 12px 20px; font-weight: 700; cursor: pointer; }
 .how-to-scale { background: var(--orange) !important; }
 
-/* HERO */
+/* HERO (Condensed for brevity) */
 .hero { display: flex; padding: 160px 5% 50px; min-height: 100vh; gap: 40px; align-items: center; }
-.hero-left { flex: 1.2; }
-.avatar-group { display: flex; margin-bottom: 20px; }
-.avatar { width: 40px; height: 40px; border-radius: 50%; border: 2px solid #000; margin-right: -10px; }
-
 h1 { font-size: 68px; font-weight: 800; line-height: 1.1; margin: 25px 0; letter-spacing: -2px; }
-.badge { color: var(--orange); border: 1px solid #333; padding: 6px 15px; border-radius: 20px; font-size: 14px; width: fit-content; }
-.hero-desc { color: #888; font-size: 18px; margin-bottom: 35px; max-width: 500px; line-height: 1.5; }
 
-/* SCALE OPTION BUTTON (EXACT NAVBAR HOVER BEHAVIOR) */
-.scale-btn {
-    background: #111; border: 1px solid #333; border-radius: 12px; padding: 15px 25px;
-    display: flex; align-items: center; gap: 15px; cursor: pointer; 
-    transition: all 0.3s ease; /* Matched to nav speed */
+/* SERVICES SECTION */
+.services-section { 
+    background: #F8F9FA; 
+    color: #000; 
+    padding: 100px 10%; 
+    border-radius: 60px 60px 0 0; 
 }
 
-/* On hover, background turns orange just like nav pill options */
-.scale-btn:hover { 
-    background: var(--orange) !important; 
-    border-color: var(--orange); 
+.services-title { text-align: center; font-size: 48px; margin-bottom: 60px; font-weight: 800; }
+
+.service-card { 
+    background: white; 
+    border-radius: 30px; 
+    padding: 40px; 
+    margin-bottom: 25px; 
+    border: 1px solid #eee; 
+    transition: 0.5s; 
+    cursor: pointer; 
 }
 
-/* Rocket box */
-.rocket-box {
-    background: var(--orange);
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 20px;
-    transition: transform 0.6s ease, background 0.3s ease;
+.service-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Rotate the BOX on hover (not the rocket itself) */
-.scale-btn:hover .rocket-box {
-    background: white !important;   /* turns white */
-    transform: rotate(360deg);      /* rotates once clockwise */
-    color: var(--orange);
+.sub-text { color: #666; font-size: 14px; margin-top: 5px; }
+.plus-icon { font-size: 24px; color: #ccc; transition: 0.3s; }
+
+.service-body { 
+    max-height: 0; 
+    overflow: hidden; 
+    opacity: 0; 
+    transition: 0.5s ease; 
 }
 
+/* Card Hover Interactions */
+.service-card:hover { border-color: var(--orange); }
+.service-card:hover .service-body { max-height: 250px; opacity: 1; margin-top: 25px; }
+.service-card:hover .plus-icon { transform: rotate(45deg); color: var(--orange); }
 
-.btn-text { text-align: left; color: white; transition: 0.3s; }
-.btn-text strong { display: block; font-size: 18px; }
-.btn-text small { font-size: 10px; opacity: 0.6; }
-
-/* SLIDER MASONRY */
-.hero-right { 
-    flex: 1; display: flex; gap: 15px; height: 750px; overflow: hidden; 
-    mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+/* PILL BUTTON STYLE */
+.service-cta {
+    background-color: var(--dark);
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 50px; /* Pill Shape */
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
-.column { flex: 1; }
-.track { display: flex; flex-direction: column; gap: 15px; }
-.card-img { width: 100%; height: auto; border-radius: 15px; display: block; }
 
+/* Button Hover State */
+.service-cta:hover {
+    background-color: var(--orange);
+    color: white;
+    transform: scale(1.05); /* Slight pop effect */
+    box-shadow: 0 10px 20px rgba(255, 77, 0, 0.2);
+}
+
+/* SLIDER MASONRY ANIMATIONS */
 @keyframes scrollUp { from { transform: translateY(0); } to { transform: translateY(-50.5%); } }
 @keyframes scrollDown { from { transform: translateY(-50.5%); } to { transform: translateY(0); } }
 .col-up .track { animation: scrollUp 25s linear infinite; }
 .col-down .track { animation: scrollDown 25s linear infinite; }
-
-/* SERVICES */
-.services-section { background: #F8F9FA; color: #000; padding: 100px 10%; border-radius: 60px 60px 0 0; }
-.services-title { text-align: center; font-size: 48px; margin-bottom: 60px; font-weight: 800; }
-.service-card { background: white; border-radius: 30px; padding: 40px; margin-bottom: 25px; border: 1px solid #eee; transition: 0.5s; cursor: pointer; }
-.service-body { max-height: 0; overflow: hidden; opacity: 0; transition: 0.5s ease; }
-.service-card:hover .service-body { max-height: 250px; opacity: 1; margin-top: 25px; }
-.service-card:hover { border-color: var(--orange); }
-
-/* Base styles for the pill-shaped button */
-.service-cta {
-    background-color: #000000; /* Black background */
-    color: #ffffff;            /* White text */
-    border: none;
-    padding: 10px 24px;        /* Vertical and Horizontal padding */
-    border-radius: 50px;       /* Creates the pill shape */
-    cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.3s ease; /* Smooth color transition */
-    display: inline-block;
-}
-
-/* Hover state */
-.service-cta:hover {
-    background-color: #ffa500; /* Turns Orange on hover */
-    color: #ffffff;            /* Ensures text stays white */
-}
