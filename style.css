@@ -257,11 +257,11 @@ h1 {
 }
 
 .col-up .track {
-    animation: scrollUp 10s linear infinite;
+    animation: scrollUp 25s linear infinite;
 }
 
 .col-down .track {
-    animation: scrollDown 10s linear infinite;
+    animation: scrollDown 25s linear infinite;
 }
 
 /* ================= SERVICES ================= */
