@@ -14,10 +14,18 @@ body { background: var(--dark); color: white; font-family: 'Inter', sans-serif; 
 
 /* NAVBAR */
 .navbar {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 30px 5%; position: fixed; width: 100%; top: 0; z-index: 1000;
-    background: transparent; transition: all 0.4s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: #8e8e8e; /* grey */
+    transition: all 0.4s ease;
 }
+
 
 .navbar.scrolled {
     padding: 15px 5%;
@@ -63,12 +71,22 @@ h1 { font-size: 68px; font-weight: 800; line-height: 1.1; margin: 25px 0; letter
     border-color: var(--orange); 
 }
 
-/* Fix for child elements when button is hovered */
-.rocket-box { background: var(--orange); padding: 10px; border-radius: 10px; font-size: 20px; transition: 0.3s; }
-.scale-btn:hover .rocket-box { 
-    background: white !important; /* Turns white for contrast when bg is orange */
-    color: var(--orange); 
+/* Rocket box */
+.rocket-box {
+    background: var(--orange);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    transition: transform 0.6s ease, background 0.3s ease;
 }
+
+/* Rotate the BOX on hover (not the rocket itself) */
+.scale-btn:hover .rocket-box {
+    background: white !important;   /* turns white */
+    transform: rotate(360deg);      /* rotates once clockwise */
+    color: var(--orange);
+}
+
 
 .btn-text { text-align: left; color: white; transition: 0.3s; }
 .btn-text strong { display: block; font-size: 18px; }
