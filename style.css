@@ -3,8 +3,20 @@
     --dark: #000;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: var(--dark); color: white; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--dark);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
 
 .accent-font {
     font-family: 'Cormorant Garamond', serif;
@@ -12,7 +24,8 @@ body { background: var(--dark); color: white; font-family: 'Inter', sans-serif; 
     font-weight: 600;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -22,48 +35,249 @@ body { background: var(--dark); color: white; font-family: 'Inter', sans-serif; 
     width: 100%;
     top: 0;
     z-index: 1000;
-    background: #8e8e8e; /* grey */
+    background: #8e8e8e;
     transition: all 0.4s ease;
 }
 
 .navbar.scrolled {
-    padding: 15px 5%;
-    background: rgba(25, 25, 25, 0.75);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding: 20px 5%;
+    background: rgba(140, 140, 140, 0.9);
+    backdrop-filter: blur(12px);
 }
 
-.nav-pill { background: #111; border: 1px solid #333; padding: 5px; border-radius: 50px; display: flex; }
-.nav-pill a { color: #888; text-decoration: none; padding: 10px 20px; border-radius: 50px; font-size: 14px; transition: 0.3s; }
-.nav-pill a:hover, .nav-pill a.active { background: var(--orange); color: white; }
-
-.nav-cta { border: 2px solid var(--orange); border-radius: 50px; display: flex; overflow: hidden; }
-.nav-cta button { background: transparent; color: white; border: none; padding: 12px 20px; font-weight: 700; cursor: pointer; }
-.how-to-scale { background: var(--orange) !important; }
-
-/* HERO (Condensed for brevity) */
-.hero { display: flex; padding: 160px 5% 50px; min-height: 100vh; gap: 40px; align-items: center; }
-h1 { font-size: 68px; font-weight: 800; line-height: 1.1; margin: 25px 0; letter-spacing: -2px; }
-
-/* SERVICES SECTION */
-.services-section { 
-    background: #F8F9FA; 
-    color: #000; 
-    padding: 100px 10%; 
-    border-radius: 60px 60px 0 0; 
+.logo {
+    font-size: 20px;
 }
 
-.services-title { text-align: center; font-size: 48px; margin-bottom: 60px; font-weight: 800; }
+/* NAV LINKS */
 
-.service-card { 
-    background: white; 
-    border-radius: 30px; 
-    padding: 40px; 
-    margin-bottom: 25px; 
-    border: 1px solid #eee; 
-    transition: 0.5s; 
-    cursor: pointer; 
+.nav-pill {
+    background: #111;
+    border: 1px solid #333;
+    padding: 6px;
+    border-radius: 50px;
+    display: flex;
+}
+
+.nav-pill a {
+    color: #888;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 50px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nav-pill a:hover,
+.nav-pill a.active {
+    background: var(--orange);
+    color: white;
+}
+
+/* NAV BUTTONS */
+
+.nav-cta {
+    display: flex;
+    border: 2px solid var(--orange);
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.nav-cta button {
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.how-to-scale {
+    background: #000;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    display: flex;
+    padding: 170px 5% 70px;
+    min-height: 100vh;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-left {
+    flex: 1.2;
+}
+
+/* AVATARS */
+
+.avatar-group {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    margin-right: -10px;
+}
+
+/* HERO TEXT */
+
+h1 {
+    font-size: 68px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 25px 0;
+    letter-spacing: -2px;
+}
+
+.badge {
+    color: var(--orange);
+    border: 1px solid #333;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    width: fit-content;
+}
+
+.hero-desc {
+    color: #888;
+    font-size: 18px;
+    margin-bottom: 35px;
+    max-width: 520px;
+    line-height: 1.5;
+}
+
+/* ================= SCALE BUTTON ================= */
+
+.scale-btn {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 14px;
+    padding: 18px 26px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+}
+
+.btn-text strong {
+    display: block;
+    font-size: 18px;
+    color: white;
+}
+
+.btn-text small {
+    font-size: 11px;
+    opacity: 0.6;
+}
+
+/* ================= ROCKET BOX ================= */
+
+.rocket-box {
+    background: var(--orange);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    transition: transform 0.6s ease, background 0.3s ease;
+}
+
+/* rotate ONLY the box */
+.scale-btn:hover .rocket-box,
+.nav-cta button:hover .rocket-box {
+    transform: rotate(360deg);
+    background: white;
+    color: var(--orange);
+}
+
+/* ================= TRUSTED ================= */
+
+.trusted-text {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.logo-strip {
+    margin-top: 15px;
+    max-width: 420px;
+}
+
+/* ================= HERO SLIDER ================= */
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    gap: 15px;
+    height: 750px;
+    overflow: hidden;
+}
+
+.column {
+    flex: 1;
+}
+
+.track {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card-img {
+    width: 100%;
+    border-radius: 15px;
+    display: block;
+}
+
+/* animations */
+
+@keyframes scrollUp {
+    to { transform: translateY(-50%); }
+}
+
+@keyframes scrollDown {
+    from { transform: translateY(-50%); }
+}
+
+.col-up .track {
+    animation: scrollUp 25s linear infinite;
+}
+
+.col-down .track {
+    animation: scrollDown 25s linear infinite;
+}
+
+/* ================= SERVICES ================= */
+
+.services-section {
+    background: #F8F9FA;
+    color: #000;
+    padding: 100px 10%;
+    border-radius: 60px 60px 0 0;
+}
+
+.services-title {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 60px;
+    font-weight: 800;
+}
+
+.service-card {
+    background: white;
+    border-radius: 30px;
+    padding: 40px;
+    margin-bottom: 25px;
+    border: 1px solid #eee;
+    cursor: pointer;
+    transition: 0.4s;
 }
 
 .service-header {
@@ -72,46 +286,42 @@ h1 { font-size: 68px; font-weight: 800; line-height: 1.1; margin: 25px 0; letter
     align-items: center;
 }
 
-.sub-text { color: #666; font-size: 14px; margin-top: 5px; }
-.plus-icon { font-size: 24px; color: #ccc; transition: 0.3s; }
-
-.service-body { 
-    max-height: 0; 
-    overflow: hidden; 
-    opacity: 0; 
-    transition: 0.5s ease; 
+.plus-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
 }
 
-/* Card Hover Interactions */
-.service-card:hover { border-color: var(--orange); }
-.service-card:hover .service-body { max-height: 250px; opacity: 1; margin-top: 25px; }
-.service-card:hover .plus-icon { transform: rotate(45deg); color: var(--orange); }
+/* body hidden by default */
+.service-body {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.5s ease;
+}
 
-/* PILL BUTTON STYLE */
+.service-card:hover .service-body {
+    max-height: 250px;
+    opacity: 1;
+    margin-top: 25px;
+}
+
+.service-card:hover {
+    border-color: var(--orange);
+}
+
 .service-cta {
-    background-color: var(--dark);
-    color: white;
-    border: none;
-    padding: 14px 32px;
-    border-radius: 50px; /* Pill Shape */
-    font-weight: 700;
-    font-size: 15px;
-    cursor: pointer;
     margin-top: 20px;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-/* Button Hover State */
-.service-cta:hover {
-    background-color: var(--orange);
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: none;
+    background: var(--orange);
     color: white;
-    transform: scale(1.05); /* Slight pop effect */
-    box-shadow: 0 10px 20px rgba(255, 77, 0, 0.2);
+    font-weight: 700;
+    cursor: pointer;
 }
-
-/* SLIDER MASONRY ANIMATIONS */
-@keyframes scrollUp { from { transform: translateY(0); } to { transform: translateY(-50.5%); } }
-@keyframes scrollDown { from { transform: translateY(-50.5%); } to { transform: translateY(0); } }
-.col-up .track { animation: scrollUp 25s linear infinite; }
-.col-down .track { animation: scrollDown 25s linear infinite; }
