@@ -290,7 +290,7 @@ h1 {
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    border: 1px solid #ccc;
+    border: 1px solid #000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -320,7 +320,7 @@ h1 {
     padding: 12px 20px;
     border-radius: 50px;
     border: none;
-    background: var(--orange);
+    background: var(--dark);
     color: white;
     font-weight: 700;
     cursor: pointer;
